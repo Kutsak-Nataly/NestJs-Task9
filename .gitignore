@@ -1,7 +1,11 @@
 # compiled output
 /dist
 /node_modules
-
+# my ignor
+jsdoc
+build
+.idea
+log
 # Logs
 logs
 *.log
