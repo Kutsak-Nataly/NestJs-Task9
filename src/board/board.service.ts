@@ -20,11 +20,11 @@ export class BoardService {
 
     };
 
-    async post(board: Board): Promise<Board> {
+    async post(board: Board): Promise<Board | undefined> {
         return await this.boardRepository.save(board);
     };
 
-    async put(board: Board): Promise<Board> {
+    async put(board: Board): Promise<Board | undefined> {
         return this.boardRepository.save(board);
     };
 

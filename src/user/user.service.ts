@@ -23,17 +23,17 @@ export class UserService {
 
     };
 
-    // async getByLogin(login: string): Promise<User | undefined> {
-    //     return await this.usersRepository.findOne({ login });
-    // };
+    async getByLogin(login: string): Promise<User | undefined> {
+        return await this.usersRepository.findOne({ login });
+    };
 
-    async post(user: User): Promise<User> {
+    async post(user: User): Promise<User | undefined> {
         const userHash = user;
         userHash.password = await bcrypt.hash(userHash.password, +this.configService.get('CRYPT_SALT'));
         return await this.usersRepository.save(userHash);
     };
 
-    async put(user: User): Promise<User> {
+    async put(user: User): Promise<User | undefined> {
         const userHash = user;
         userHash.password = await bcrypt.hash(userHash.password, +this.configService.get('CRYPT_SALT'));
         return this.usersRepository.save(userHash);

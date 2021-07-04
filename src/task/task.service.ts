@@ -20,11 +20,11 @@ export class TaskService {
 
     };
 
-    async post(task: Task): Promise<Task> {
+    async post(task: Task): Promise<Task | undefined> {
         return await this.taskRepository.save(task);
     };
 
-    async put(task: Task): Promise<Task> {
+    async put(task: Task): Promise<Task | undefined> {
         return this.taskRepository.save(task);
     };
 

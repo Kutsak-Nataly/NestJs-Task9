@@ -1,0 +1,13 @@
+config:
+  target: 'http://localhost:4000'
+  phases:
+    - duration: 40
+      arrivalRate: 10
+      name: 1 step (40x10)
+    - duration: 80
+      arrivalRate: 20
+      name: 2 step (80x20)
+scenarios:
+  - flow:
+      - get:
+          url: "/users"
