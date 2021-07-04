@@ -1,8 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserPublic } from './user';
-import { DeleteResult } from 'typeorm';
-
 
 @Controller('users')
 export class UserController {
@@ -30,7 +28,7 @@ export class UserController {
     }
 
     @Post()
-    @HttpCode(201)
+    @HttpCode(HttpStatus.CREATED)
     async post(@Body() user: User): Promise<UserPublic> {
         const userCreate = await this.userService.post(user);
         if (!userCreate) {
@@ -53,12 +51,12 @@ export class UserController {
     }
 
     @Delete(':id')
-    async deleteById(@Param('id')  id: string): Promise<DeleteResult> {
+    async deleteById(@Param('id')  id: string): Promise<number> {
         const deleteResult = await this.userService.deleteById(id);
-        if(!deleteResult){
-            throw new HttpException('User not update', HttpStatus.BAD_REQUEST);
+        if(deleteResult.affected  === 0){
+            throw new HttpException(`Error delete By Id ${id} User`, HttpStatus.BAD_REQUEST);
         } else {
-            return deleteResult;
+            return deleteResult.affected;
         }
     }
 }

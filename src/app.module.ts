@@ -6,15 +6,21 @@ import { UserModule } from './user/user.module';
 import { BoardModule } from './board/board.module';
 import { TaskModule } from './task/task.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { APP_FILTER } from '@nestjs/core';
+import { HttpExceptionFilter } from './error_handler/http-exception.filter';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({isGlobal: true}),
+    ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot(),
     UserModule, BoardModule,
     TaskModule],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,
+    {
+      provide: APP_FILTER,
+      useClass: HttpExceptionFilter,
+    }],
 })
 export class AppModule {
 }

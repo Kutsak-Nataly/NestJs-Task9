@@ -30,14 +30,12 @@ export class UserService {
     async post(user: User): Promise<User> {
         const userHash = user;
         userHash.password = await bcrypt.hash(userHash.password, +this.configService.get('CRYPT_SALT'));
-        // userHash.password = await bcrypt.hash(userHash.password, 5);
         return await this.usersRepository.save(userHash);
     };
 
     async put(user: User): Promise<User> {
         const userHash = user;
-        // userHash.password = await bcrypt.hash(userHash.password, this.configService.get('CRYPT_SALT'));
-        userHash.password = await bcrypt.hash(userHash.password, 5);
+        userHash.password = await bcrypt.hash(userHash.password, +this.configService.get('CRYPT_SALT'));
         return this.usersRepository.save(userHash);
     };
 

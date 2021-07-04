@@ -22,7 +22,6 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'object-curly-spacing': 'off',
-        // "indent": [ "error", 4 ]
         "indent": "off"
     }
 };
