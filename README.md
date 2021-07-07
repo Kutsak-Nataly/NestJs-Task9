@@ -41,7 +41,7 @@ npm run test:artillery-fastyfy
 ```
 ## Test results table
 <p>
-<img src="https://github.com/Kutsak-Nataly/NestJs-Task9/tree/task9/logs/table.png" width="727" height="806" alt="table" />
+<img src="https://github.com/Kutsak-Nataly/NestJs-Task9/blob/task9/logs/table.png" width="727" height="806" alt="table" />
 </p>
 
 
