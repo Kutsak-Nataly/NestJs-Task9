@@ -8,7 +8,8 @@ import {
     HttpStatus,
     Param,
     Post,
-    Put, UseGuards
+    Put,
+    UseGuards
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserPublic } from './user';
@@ -66,7 +67,7 @@ export class UserController {
     @Delete(':id')
     async deleteById(@Param('id')  id: string): Promise<number> {
         const deleteResult = await this.userService.deleteById(id);
-        if(deleteResult.affected  === 0){
+        if (deleteResult.affected === 0) {
             throw new HttpException(`Error delete By Id ${id} User`, HttpStatus.BAD_REQUEST);
         } else {
             return deleteResult.affected;

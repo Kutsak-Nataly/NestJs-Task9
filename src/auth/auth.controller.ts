@@ -1,4 +1,4 @@
-import { Body, Controller, HttpCode, HttpException, HttpStatus, Post, Res } from '@nestjs/common';
+import { Body, Controller, HttpCode, HttpException, HttpStatus, Post } from '@nestjs/common';
 import { User, UserPublic } from '../user/user';
 import { UserService } from '../user/user.service';
 import { AuthService } from './auth.service';
@@ -26,7 +26,6 @@ export class AuthController {
         }
 
     }
-
 
     @Post('/add-admin')
     @HttpCode(HttpStatus.CREATED)

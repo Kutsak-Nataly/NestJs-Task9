@@ -1,10 +1,11 @@
-<p align="center">
+<p style="text-align: center">
 <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" />
 </p>
 
 ## Used
-* Clone repository from GitHub to your computer. Install the dependencies specified in the file package.json.
+* Clone repository from GitHub to your computer
 * Select branch Task9
+* Install the dependencies
 ### Configuration connection to your local database
 .env file<br>
 <strong>edit variables:</strong><br>
