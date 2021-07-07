@@ -1,9 +1,22 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpCode,
+    HttpException,
+    HttpStatus,
+    Param,
+    Post,
+    Put, UseGuards
+} from '@nestjs/common';
 import { DeleteResult } from 'typeorm';
 import { TaskService } from './task.service';
 import { Task } from './task';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('/boards/:boardId/tasks')
+@UseGuards(AuthGuard)
 export class TaskController {
     constructor(private readonly taskService: TaskService) {
     }

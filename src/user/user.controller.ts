@@ -1,8 +1,21 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpCode,
+    HttpException,
+    HttpStatus,
+    Param,
+    Post,
+    Put, UseGuards
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserPublic } from './user';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('users')
+@UseGuards(AuthGuard)
 export class UserController {
     constructor(private readonly userService: UserService) {
     }

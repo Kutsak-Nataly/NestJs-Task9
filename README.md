@@ -2,52 +2,27 @@
 <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" />
 </p>
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Used
+* Clone repository from GitHub to your computer. Install the dependencies specified in the file package.json.
+* Select branch Task9
+### Configuration connection to your local database
+.env file<br>
+<strong>edit variables:</strong><br>
+TYPEORM_USERNAME=<br>
+TYPEORM_PASSWORD=<br>
+TYPEORM_DATABASE=<br>
+### Start App for check
+npm start:dev
+### Add user "admin"
+This is a temporary functionality that can be easily removed when the application is sent to production.
+#### to test the application, you need to create a user:
+***
+POST:
+<br>http://localhost:4000/login/add-admin<br>
+{<br>
+"login": "admin",<br>
+"password": "admin"<br>
+}
+****
+### Run test
+npm run test:auth

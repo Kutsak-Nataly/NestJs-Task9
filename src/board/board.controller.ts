@@ -1,9 +1,22 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpCode,
+    HttpException,
+    HttpStatus,
+    Param,
+    Post,
+    Put, UseGuards
+} from '@nestjs/common';
 import { DeleteResult } from 'typeorm';
 import { BoardService } from './board.service';
 import { Board } from './board';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('boards')
+@UseGuards(AuthGuard)
 export class BoardController {
     constructor(private readonly boardService: BoardService) {
     }

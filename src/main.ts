@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 const TYPEORM_HOST = process.env.TYPEORM_HOST;
 
 async function bootstrap() {
-  if (fastyfy) {
+  if (fastyfy.toLowerCase() === 'true') {
     const app = await NestFactory.create<NestFastifyApplication>(
         AppModule,
         new FastifyAdapter()
@@ -24,6 +24,7 @@ async function bootstrap() {
     app.useGlobalFilters(new HttpExceptionFilter());
     app.use(loggerMiddleware);
     await app.listen(PORT, TYPEORM_HOST);
+      console.log('Run express');
   }
 }
 
