@@ -25,5 +25,23 @@ POST:
 "password": "admin"<br>
 }
 ****
-### Run test
+### Run test Authentication
 npm run test:auth
+
+### Performance testing - Artillery
+Assign a value to the variable USE_FASTIFY= [false or true].
+Reload the server.
+##### Run test for <strong>express</strong> with script. Result in logs/result-artillery.txt
+```
+npm run test:artillery
+```
+##### Run test for <strong>fastyfy</strong> with script. Result in logs/result-artillery-fastyfy.txt
+```
+npm run test:artillery-fastyfy
+```
+## Test results table
+<p>
+<img src="https://github.com/Kutsak-Nataly/NestJs-Task9/tree/task9/logs/table.png" width="727" height="806" alt="table" />
+</p>
+
+

@@ -1,9 +1,12 @@
 config:
-  target: 'http://localhost:4000'
+  target: "http://localhost:4000"
   phases:
     - duration: 20
       arrivalRate: 5
       name: 1 step (20x5)
+  defaults:
+    headers:
+      authorization: "Bearer {{ token }}"
   variables:
     token:
       - "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6ImFkbWluIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTYyNTY2MDg1NSwiZXhwIjoxNjI1NzQ3MjU1fQ.5H8-imaBqsPiWJ2K7JzsI7DRCyPnmv4PattAEZXaIy0"
@@ -12,33 +15,23 @@ scenarios:
     flow:
       - get:
           url: "/users"
-          headers:
-            authorization: "Bearer {{ token }}"
       - post:
           url: "/users"
           json:
-            name: 123
+            name: "123"
             login: "testing{{ $randomString(8) }}"
-            password: password
+            password: "password"
           capture:
-            - json: $.results[0].id
+            - json: $.id
               as: userId
-          headers:
-            authorization: "Bearer {{ token }}"
       - put:
           url: "/users/{{ userId }}"
           json:
-            name: 1234
+            name: "1234"
             login: "testing{{ $randomString(8) }}"
-            password: admin3
-          headers:
-            authorization: "Bearer {{ token }}"
+            password: "admin3"
       - get:
           url: "/users/{{ userId }}"
-          headers:
-            authorization: "Bearer {{ token }}"
       - delete:
           url: "/users/{{ userId }}"
-          headers:
-            authorization: "Bearer {{ token }}"
 

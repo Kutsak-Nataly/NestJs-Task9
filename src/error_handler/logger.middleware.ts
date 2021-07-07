@@ -6,7 +6,7 @@ export function loggerMiddleware(req: Request, res: Response, next: NextFunction
     const {method, url, body, headers} = req;
     const pathToLogger = 'logs/info.log';
     const writeStream = fs.createWriteStream(pathToLogger, {flags: 'a', encoding: 'utf8'});
-    const data = `${start}\t${method}\t${url}\t body: ${JSON.stringify(body)}\t${headers['user-agent']}\n`;
+    const data = `${start}\t${res.statusCode}\t${method}\t${url}\t body: ${JSON.stringify(body)}\t${headers['user-agent']}\n`;
     writeStream.write(data);
     next();
 }
