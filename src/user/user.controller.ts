@@ -1,8 +1,22 @@
-import { Body, Controller, Delete, Get, HttpCode, HttpException, HttpStatus, Param, Post, Put } from '@nestjs/common';
+import {
+    Body,
+    Controller,
+    Delete,
+    Get,
+    HttpCode,
+    HttpException,
+    HttpStatus,
+    Param,
+    Post,
+    Put,
+    UseGuards
+} from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserPublic } from './user';
+import { AuthGuard } from '../auth/auth.guard';
 
 @Controller('users')
+@UseGuards(AuthGuard)
 export class UserController {
     constructor(private readonly userService: UserService) {
     }
@@ -53,7 +67,7 @@ export class UserController {
     @Delete(':id')
     async deleteById(@Param('id')  id: string): Promise<number> {
         const deleteResult = await this.userService.deleteById(id);
-        if(deleteResult.affected  === 0){
+        if (deleteResult.affected === 0) {
             throw new HttpException(`Error delete By Id ${id} User`, HttpStatus.BAD_REQUEST);
         } else {
             return deleteResult.affected;

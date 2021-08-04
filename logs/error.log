@@ -1,0 +1,22 @@
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/users
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/boards/12345/tasks
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/boards
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/users/123
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/boards/12345/tasks/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	POST: 	/users
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	GET: 	/boards/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	POST: 	/boards/12345/tasks
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	PUT: 	/users/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	POST: 	/boards
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	PUT: 	/boards/12345/tasks/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	DELETE: 	/users/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	PUT: 	/boards/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	DELETE: 	/boards/12345/tasks/12345
+7/7/2021, 7:43:53 PM 	Status: 401 	Error: Unauthorized	DELETE: 	/boards/12345
+7/7/2021, 7:43:53 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/c0efb0f5-ca20-4e38-b38c-3930fddc97d8/tasks/7d9e0f40-b444-4c81-acce-d1bc64082774
+7/7/2021, 7:43:53 PM 	Status: 404 	Error: Board Not found	GET: 	/boards/47e01b5f-cd10-4b2d-8864-f6f8db564de1
+7/7/2021, 7:43:54 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/4c726802-685f-4e3d-95ce-de13b3daae53/tasks/d41155cf-2f24-44ab-aaa2-102e91d54089
+7/7/2021, 7:43:54 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/4c726802-685f-4e3d-95ce-de13b3daae53/tasks/2eec972f-323f-48f4-b9df-16b90b40f59e
+7/7/2021, 7:43:54 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/4c726802-685f-4e3d-95ce-de13b3daae53/tasks/3d7ede19-d392-42af-a19f-42019690ce2c
+7/7/2021, 7:43:54 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/4c726802-685f-4e3d-95ce-de13b3daae53/tasks/36a4b077-055f-42c1-ac8f-ae559b1f45d6
+7/7/2021, 7:43:54 PM 	Status: 404 	Error: Task Not found	GET: 	/boards/4c726802-685f-4e3d-95ce-de13b3daae53/tasks/5f12945e-40d4-4f76-8d2f-f5a85b12d2e3

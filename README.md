@@ -1,53 +1,47 @@
-<p align="center">
+<p style="text-align: center">
 <img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" />
 </p>
 
-## Description
+## Used
+* Clone repository from GitHub to your computer
+* Select branch Task9
+* Install the dependencies
+### Configuration connection to your local database
+.env file<br>
+<strong>edit variables:</strong><br>
+TYPEORM_USERNAME=<br>
+TYPEORM_PASSWORD=<br>
+TYPEORM_DATABASE=<br>
+### Start App for check
+npm start:dev
+### Add user "admin"
+This is a temporary functionality that can be easily removed when the application is sent to production.
+#### to test the application, you need to create a user:
+***
+POST:
+<br>http://localhost:4000/login/add-admin<br>
+{<br>
+"login": "admin",<br>
+"password": "admin"<br>
+}
+****
+### Run test Authentication
+npm run test:auth
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+### Performance testing - Artillery
+Assign a value to the variable USE_FASTIFY= [false or true].
+Reload the server.
+##### Run test for <strong>express</strong> with script. Result in logs/result-artillery.txt
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm run test:artillery
 ```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+##### Run test for <strong>fastyfy</strong> with script. Result in logs/result-artillery-fastyfy.txt
 ```
+npm run test:artillery-fastyfy
+```
+## Test results table
+<p>
+<img src="https://github.com/Kutsak-Nataly/NestJs-Task9/blob/task9/logs/table.png" width="727" height="806" alt="table" />
+</p>
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).

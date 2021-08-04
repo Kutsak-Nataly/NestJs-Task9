@@ -8,13 +8,15 @@ import { TaskModule } from './task/task.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { APP_FILTER } from '@nestjs/core';
 import { HttpExceptionFilter } from './error_handler/http-exception.filter';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot(),
     UserModule, BoardModule,
-    TaskModule],
+    TaskModule,
+    AuthModule],
   controllers: [AppController],
   providers: [AppService,
     {
